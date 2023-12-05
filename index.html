@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrice d'Eisenhower</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <h1>Matrice d'Eisenhower</h1>
+
+  <div id="un">
+    <h2>Urgent et Important</h2>
+    <ul>
+      <li v-for="task in tasks.filter(task => task.quadrant === 1)" :key="task.id">{{ task.name }}</li>
+    </ul>
+  </div>
+
+  <div id="deux">
+    <h2>Important mais Non Urgent</h2>
+    <ul>
+      <li v-for="task in tasks.filter(task => task.quadrant === 2)" :key="task.id">{{ task.name }}</li>
+    </ul>
+  </div>
+
+  <div id="trois">
+    <h2>Urgent mais Non Important</h2>
+    <ul>
+      <li v-for="task in tasks.filter(task => task.quadrant === 3)" :key="task.id">{{ task.name }}</li>
+    </ul>
+  </div>
+
+  <div id="quatre">
+    <h2>Ni Urgent Ni Important</h2>
+    <ul>
+      <li v-for="task in tasks.filter(task => task.quadrant === 4)" :key="task.id">{{ task.name }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Ajouter une tâche</h2>
+    <input type="text" v-model="newTask" placeholder="Nom de la tâche">
+    <select v-model="newTaskQuadrant">
+      <option value="1">Urgent et Important</option>
+      <option value="2">Important mais Non Urgent</option>
+      <option value="3">Urgent mais Non Important</option>
+      <option value="4">Ni Urgent Ni Important</option>
+    </select>
+    <button @click="addTask">Ajouter</button>
+  </div>
+</div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+
+</body>
+
+</html>

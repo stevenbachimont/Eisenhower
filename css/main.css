@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  grid-column: span 2;
+}
+
+#un, #deux, #trois, #quatre {
+  background-color: #26869b;
+  border-radius: 10px;
+}
+
+div {
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+
+div:nth-child(odd) {
+  background-color: #239f90;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input, select, button {
+  margin-right: 10px;
+}
